@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     ];
 
-    const accountTbody = document.getElementById('account-tbody');
+    const accountTbody = document.getElementById("account-tbody");
 
     accountData.forEach(account => {
         const row = document.createElement('tr');
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
             <td>${account.userId}</td>
             <td>${account.fullName}</td>
             <td>${account.email}</td>
-            <td class="status ${account.userLevel.toLowerCase()}">${account.userLevel}</td>
+            <td class="user-level">${account.userLevel}</td>
             <td class="status ${account.status.toLowerCase()}">${account.status}</td>
             <td>
+                <button class="action-btn view-btn" onclick="viewAccount(${account.userId})">View</button>
                 <button class="action-btn edit-btn" onclick="editAccount(${account.userId})">Edit</button>
                 <button class="action-btn reject-btn" onclick="deleteAccount(${account.userId})">Delete</button>
-                <button class="action-btn view-btn" onclick="viewAccount(${account.userId})">View</button>
             </td>
         `;
 
@@ -54,7 +54,6 @@ function viewAccount(userId) {
     alert(`View functionality triggered for User ID: ${userId}`);
     // Implement view functionality here
 }
-
 
 function filterTableByUserLevel() {
     const filterValue = document.getElementById("user-level-filter").value.toLowerCase();

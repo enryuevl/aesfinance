@@ -516,7 +516,8 @@ main .breadcrumbs li a.active {
 .account-table th,
 .account-table td {
     padding: 15px;
-    text-align: left;
+    text-align: center; /* Center-align horizontally */
+    vertical-align: middle; /* Center-align vertically */
     font-size: 14px;
     color: var(--dark);
     border-bottom: 1px solid var(--grey);
@@ -526,6 +527,7 @@ main .breadcrumbs li a.active {
     background: var(--light-blue);
     color: var(--light);
     font-weight: 600;
+    text-align: center; /* Ensure headers are also centered */
 }
 
 .account-table tr:nth-child(even) {
@@ -540,6 +542,7 @@ main .breadcrumbs li a.active {
 .account-table td.status {
     font-weight: 600;
     text-transform: capitalize;
+    text-align: center; /* Ensure status column is centered */
 }
 
 /* User Levels */
@@ -663,6 +666,7 @@ main .breadcrumbs li a.active {
     border-color: var(--blue);
     box-shadow: 0 0 6px rgba(13, 7, 117, 0.2);
 }
+
 
 /* MAIN */
 
