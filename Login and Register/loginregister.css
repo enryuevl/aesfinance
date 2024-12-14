@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Montserrat:wght@700&display=swap');
+
+:root {
+  --accent-color: #0d0775; /* Primary dark blue */
+  --base-color: #ffffff; /* White background */
+  --text-color: #2E3A59; /* Darker blue-gray for text */
+  --input-color: #E3F2FD; /* Light blue for inputs */
+  --light-blue: #544dbb; /* Derived lighter blue */
+}
+
+@media (max-width: 1024px) {
+  body {
+    display: none; /* Hide content for screens smaller than 1024px */
+  }
+  html::before {
+    content: "This website is only available on desktop devices.";
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+  }
+}
+
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--text-color);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: min(90%, 400px);
+  padding: 25px;
+  background-color: var(--base-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Form Styling */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+form > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--input-color);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+form > div:hover {
+  border-color: var(--light-blue);
+}
+
+form label {
+  height: 45px;
+  width: 45px;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+form input {
+  flex-grow: 1;
+  height: 45px;
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+  background-color: var(--input-color);
+  color: var(--text-color);
+  outline: none;
+  font-weight: 400;
+}
+
+form input::placeholder {
+  color: rgba(46, 58, 89, 0.7);
+}
+
+form input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+form button {
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Montserrat', sans-serif; /* Set Montserrat font for buttons */
+}
+
+form button:hover {
+  background-color: var(--light-blue); /* Use the light blue color */
+  transform: scale(1.02);
+}
+
+a {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#error-message {
+  color: #d9534f;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .logo {
+    max-width: 90px;
+  }
+
+  form label,
+  form input {
+    height: 40px;
+  }
+
+  form button {
+    padding: 10px;
+  }
+}
