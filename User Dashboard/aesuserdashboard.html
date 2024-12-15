@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="cssaddtransact.css">
+	<link rel="stylesheet" href="userdashboard.css">
 	<title>AES Finance</title>
 </head>
 <body>
@@ -18,40 +18,22 @@
     </div>
     <ul class="side-menu">
         <li><a href="#" class="active"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
-        <li class="divider" data-text="management">Management</li>
-        <li>
-            <a href="#"><i class='bx bx-wallet icon'></i> Accounts <i class='bx bx-chevron-right icon-right'></i></a>
-            <ul class="side-dropdown">
-                <li><a href="#">View Accounts</a></li>
-                <li><a href="#">Add Account</a></li>
-            </ul>
-        </li>
+
         <li>
             <a href="#"><i class='bx bx-transfer-alt icon'></i> Transactions <i class='bx bx-chevron-right icon-right'></i></a>
             <ul class="side-dropdown">
                 <li><a href="#">View Transactions</a></li>
-                <li><a href="#">Add Transaction</a></li>
             </ul>
         </li>
         <li>
-            <a href="#"><i class='bx bx-credit-card icon'></i> Payments <i class='bx bx-chevron-right icon-right'></i></a>
-            <ul class="side-dropdown">
-                <li><a href="#">View Payments</a></li>
-                <li><a href="#">Add Payment</a></li>
-                <li><a href="#">Recurring Payments</a></li>
-            </ul>
-        </li>
         <li>
             <a href="#"><i class='bx bx-pie-chart-alt icon'></i> Fund Allocation <i class='bx bx-chevron-right icon-right'></i></a>
             <ul class="side-dropdown">
                 <li><a href="#">View Allocations</a></li>
-                <li><a href="#">Allocate Funds</a></li>
                 <li><a href="#">Budget Planning</a></li>
             </ul>
         </li>
-        <li>
-            <a href="#"><i class='bx bx-history icon'></i> Logs</a>
-        </li>
+
         <li class="divider" data-text="settings">Settings</li>
         <li>
             <a href="#"><i class='bx bxs-user-circle icon'></i> User Profile</a>
@@ -98,47 +80,65 @@
 			</div>
 		</nav>
 		<!-- NAVBAR -->
-
 <!-- MAIN -->
 <main>
-    <div class="add-payment">
-        <h1>Add Payment</h1>
-        <form>
-            <div class="form-group">
-                <label for="payment-date">Date of Payment</label>
-                <input type="date" id="payment-date" name="payment_date" required>
-            </div>
-            <div class="form-group">
-                <label for="payment-amount">Payment Amount (PHP)</label>
-                <input type="number" id="payment-amount" name="payment_amount" placeholder="Enter amount in PHP" required>
-            </div>
-            <div class="form-group">
-                <label for="payer-name">Name of Payer</label>
-                <input type="text" id="payer-name" name="payer_name" placeholder="Enter name of the one who paid" required>
-            </div>
-            <div class="form-group">
-                <label for="payment-purpose">Purpose of Payment</label>
-                <textarea id="payment-purpose" name="payment_purpose" placeholder="Enter purpose of payment (e.g., field trip, event)" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="receipt-number">Receipt Number</label>
-                <input type="text" id="receipt-number" name="receipt_number" placeholder="Enter receipt number" required>
-            </div>
-            <button type="submit" class="submit-btn">Add Payment</button>
-        </form>
+    <h1 class="title">User Dashboard</h1>
+    <ul class="breadcrumbs">
+        <li><a href="#">Home</a></li>
+        <li class="divider">/</li>
+        <li><a href="#" class="active">User Dashboard</a></li>
+    </ul>
+
+    <!-- Dashboard Summary -->
+    <div class="dashboard-overview">
+        <div class="overview-card unpaid">
+            <h3>₱15,000</h3>
+            <p>Total Unpaid Dues</p>
+        </div>
+        <div class="overview-card paid">
+            <h3>₱40,000</h3>
+            <p>Total Paid</p>
+        </div>
+        <div class="overview-card events">
+            <h3>3</h3>
+            <p>Upcoming Events</p>
+        </div>
+    </div>
+
+    <!-- Payment Dashboard -->
+    <div class="dashboard payment-dashboard">
+        <div class="head">
+            <h3>Your Payments</h3>
+        </div>
+
+        <div id="payment-cards" class="payment-cards">
+            <!-- Payment cards will be dynamically generated -->
+        </div>
+        <div id="payment-pagination" class="pagination-controls"></div>
+    </div>
+
+    <div class="notification">
+        <p><strong>Reminder:</strong> Please settle unpaid dues at the cashier to avoid penalties.</p>
+    </div>
+
+    <!-- Events Dashboard -->
+    <div class="dashboard events-dashboard">
+        <div class="head">
+            <h3>Upcoming Events</h3>
+        </div>
+
+        <div id="event-cards" class="event-cards">
+            <!-- Event cards will be dynamically generated -->
+        </div>
+        <div id="event-pagination" class="pagination-controls"></div>
     </div>
 </main>
 
-
-
-
-
-
 	</section>
-	<!-- NAVBAR -->
+
 
     
- 
+    <script src="userdashboard.js"></script>
 	<script src="script.js"></script>
 </body>
 </html>

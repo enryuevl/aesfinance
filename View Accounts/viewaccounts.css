@@ -576,7 +576,8 @@ main .breadcrumbs li a.active {
 }
 
 
-/* Pagination */
+
+/* Pagination Controls */
 .pagination {
     padding: 10px 20px;
     display: flex;
@@ -585,17 +586,26 @@ main .breadcrumbs li a.active {
 }
 
 .pagination button {
-    padding: 5px 10px;
-    border: 1px solid var(--blue);
-    border-radius: 5px;
-    background: var(--blue);
-    color: #fff;
+    margin: 0 4px;
+    padding: 6px 10px; /* Reduced padding */
+    font-size: 0.8rem; /* Slightly smaller font size */
+    border: none;
+    border-radius: 4px; /* Slightly smaller border radius */
     cursor: pointer;
-    transition: background 0.3s ease;
+    background: #e0e0e0;
+    color: var(--dark);
+    transition: background-color 0.3s ease;
 }
 
 .pagination button:hover {
-    background: var(--hover-blue);
+    background: var(--blue);
+    color: white;
+}
+
+.pagination button.active {
+    background: var(--blue);
+    color: white;
+    font-weight: bold;
 }
 
 
