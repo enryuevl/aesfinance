@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="cssaddtransact.css">
+	<link rel="stylesheet" href="registerpayment.css">
 	<title>AES Finance</title>
 </head>
 <body>
@@ -34,12 +34,14 @@
             </ul>
         </li>
         <li>
-            <a href="#"><i class='bx bx-credit-card icon'></i> Payments <i class='bx bx-chevron-right icon-right'></i></a>
-            <ul class="side-dropdown">
-                <li><a href="#">View Payments</a></li>
-                <li><a href="#">Add Payment</a></li>
-                <li><a href="#">Recurring Payments</a></li>
-            </ul>
+            <li>
+                <a href="#"><i class='bx bx-credit-card icon'></i> Payments <i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">Payment Configuration</a></li>
+                    <li><a href="#">Register Payment</a></li>
+                    <li><a href="#">View Unpaid Balance</a></li>
+                </ul>
+            </li>
         </li>
         <li>
             <a href="#"><i class='bx bx-pie-chart-alt icon'></i> Fund Allocation <i class='bx bx-chevron-right icon-right'></i></a>
@@ -101,37 +103,63 @@
 
 <!-- MAIN -->
 <main>
-    <div class="add-payment">
-        <h1>Add Payment</h1>
-        <form>
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1 class="title">Register Payment</h1>
+        <ul class="breadcrumbs">
+            <li><a href="#">Home</a></li>
+            <li class="divider">/</li>
+            <li><a href="#" class="active">Register Payment</a></li>
+        </ul>
+    </div>
+
+    <!-- Payment Registration Form -->
+    <div class="panel">
+        <h2 class="panel-title">Add Payment</h2>
+        <form id="register-payment-form">
+            <!-- Date of Payment -->
             <div class="form-group">
                 <label for="payment-date">Date of Payment</label>
                 <input type="date" id="payment-date" name="payment_date" required>
+                <small class="input-hint">Select the date when the payment was made.</small>
             </div>
+
+            <!-- Payment Amount -->
             <div class="form-group">
-                <label for="payment-amount">Payment Amount (PHP)</label>
+                <label for="payment-amount">Payment Amount (₱)</label>
                 <input type="number" id="payment-amount" name="payment_amount" placeholder="Enter amount in PHP" required>
+                <small class="input-hint">Enter the total payment amount.</small>
             </div>
+
+            <!-- Name of Payer -->
             <div class="form-group">
                 <label for="payer-name">Name of Payer</label>
-                <input type="text" id="payer-name" name="payer_name" placeholder="Enter name of the one who paid" required>
+                <input type="text" id="payer-name" name="payer_name" placeholder="Enter the name of the payer" required>
+                <small class="input-hint">Provide the full name of the person making the payment.</small>
             </div>
+
+            <!-- Purpose of Payment -->
             <div class="form-group">
                 <label for="payment-purpose">Purpose of Payment</label>
-                <textarea id="payment-purpose" name="payment_purpose" placeholder="Enter purpose of payment (e.g., field trip, event)" required></textarea>
+                <textarea id="payment-purpose" name="payment_purpose" placeholder="Enter the purpose (e.g., event, fees)" required></textarea>
+                <small class="input-hint">Explain the reason for the payment.</small>
             </div>
+
+            <!-- Receipt Number -->
             <div class="form-group">
                 <label for="receipt-number">Receipt Number</label>
                 <input type="text" id="receipt-number" name="receipt_number" placeholder="Enter receipt number" required>
+                <small class="input-hint">Provide the receipt or transaction reference number.</small>
             </div>
-            <button type="submit" class="submit-btn">Add Payment</button>
+
+            <!-- Submit Button -->
+            <div class="btn-group">
+                <button type="submit" class="btn">Submit</button>
+                <button type="reset" class="btn secondary">Clear</button>
+            </div>
         </form>
     </div>
 </main>
-
-
-
-
 
 
 	</section>

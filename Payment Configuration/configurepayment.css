@@ -415,96 +415,161 @@ nav .nav-link .icon:hover {
 
 /* NAVBAR */
 
-/* Main Section *//* Main Section */
+/* MAIN */
+
+/* Main Layout */
 main {
-    padding: 20px;
-    background-color: var(--grey); /* Light grey background */
-    display: flex;
-    justify-content: center; /* Center form horizontally */
-    align-items: center; /* Center form vertically */
-    min-height: 100vh; /* Ensure full viewport height */
-}
-
-/* Add Payment Container */
-.add-payment {
-    background-color: var(--light); /* White card background */
-    padding: 40px; /* Increased padding for larger appearance */
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for emphasis */
-    max-width: 600px; /* Wider form */
     width: 100%;
+    padding: 24px 20px;
+    background-color: var(--grey);
+    border-radius: 10px;
 }
 
-.add-payment h1 {
-    color: var(--blue); /* Primary blue for heading */
-    font-size: 28px; /* Larger heading */
-    font-weight: 600; /* Semi-bold heading */
-    text-align: center; /* Center align heading */
-    margin-bottom: 30px; /* Space below heading */
+/* Page Header */
+.page-header {
+    margin-bottom: 20px;
+}
+
+.page-header .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.page-header .breadcrumbs {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--dark-grey);
+}
+
+.page-header .breadcrumbs a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* Panel */
+.panel {
+    background: var(--light);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.panel h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--grey);
 }
 
 /* Form Styles */
-form {
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    border: 1px solid var(--grey);
+    border-radius: 6px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 5px rgba(84, 77, 187, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.input-hint {
+    font-size: 0.8rem;
+    color: var(--dark-grey);
+    margin-top: 2px;
+}
+
+/* Buttons */
+.btn-group {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 20px; /* Increased space between form groups */
+    justify-content: flex-end;
+    gap: 10px;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column; /* Align label and input vertically */
-    gap: 8px; /* Space between label and input */
+.btn {
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--blue);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-label {
-    font-weight: 600; /* Bold label text */
-    color: var(--blue); /* Primary blue for labels */
-    font-size: 14px; /* Slightly larger label text */
+.btn:hover {
+    background: var(--light-blue);
+    transform: translateY(-2px);
 }
 
-input,
-textarea {
-    padding: 12px; /* Larger padding for inputs */
-    border: 1px solid var(--grey); /* Light grey border */
-    border-radius: 6px; /* Slightly more rounded corners */
-    font-size: 16px; /* Larger font size for readability */
-    color: var(--dark); /* Dark text color */
-    background-color: var(--light); /* White background */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus effect */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+.btn.secondary {
+    background: var(--grey);
+    color: var(--dark);
+    border: 1px solid var(--dark-grey);
 }
 
-textarea {
-    resize: vertical; /* Allow vertical resizing only */
-    min-height: 120px; /* Increased height */
+.btn.secondary:hover {
+    background: var(--dark-grey);
+    color: #fff;
 }
 
-input:focus,
-textarea:focus {
-    border-color: var(--blue); /* Blue border on focus */
-    box-shadow: 0 0 6px rgba(13, 7, 117, 0.3); /* Glow effect on focus */
-    outline: none; /* Remove default outline */
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 60px;
+    }
 
-/* Submit Button */
-button.submit-btn {
-    background-color: var(--blue); /* Primary blue */
-    color: var(--light); /* White text */
-    padding: 15px; /* Larger button padding */
-    font-size: 18px; /* Larger font size for the button */
-    font-weight: 600; /* Bold button text */
-    border: none; /* No border for button */
-    border-radius: 8px; /* Rounded button corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    text-transform: uppercase; /* All caps for button text */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for button */
-}
+    main {
+        margin-left: 60px;
+        padding: 15px;
+    }
 
-button.submit-btn:hover {
-    background-color: rgba(13, 7, 117, 0.9); /* Darker blue on hover */
-}
+    nav {
+        padding: 10px 15px;
+    }
 
-button.submit-btn:active {
-    background-color: rgba(13, 7, 117, 0.8); /* Even darker blue on click */
+    .btn-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
 }
