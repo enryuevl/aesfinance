@@ -490,82 +490,114 @@ main .breadcrumbs li a.active {
     pointer-events: none;
     font-weight: bold;
 }
+/* General Layout */
 .accounts {
-    margin: 20px auto;
-    width: 95%;
-    background: var(--light);
-    border-radius: 10px;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 .accounts .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px 20px;
     background: var(--blue);
-    color: var(--light);
-    font-size: 18px;
-    font-weight: bold;
+    color: #fff;
 }
 
+.accounts .filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.accounts .filter-container label {
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.accounts .filter-container select {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+/* General Table Styling */
 .account-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: auto;
+    margin: 0;
+    text-align: center; /* Center-align all table content */
 }
-
+.account-table thead {
+    background: var(--light-blue);
+    color: #fff;
+}
 .account-table th,
 .account-table td {
     padding: 15px;
-    text-align: center; /* Center-align horizontally */
-    vertical-align: middle; /* Center-align vertically */
-    font-size: 14px;
-    color: var(--dark);
+    text-align: center; /* Center-align individual cells */
     border-bottom: 1px solid var(--grey);
+    font-size: 0.95rem;
+    vertical-align: middle; /* Vertically center content */
 }
 
-.account-table th {
-    background: var(--light-blue);
-    color: var(--light);
-    font-weight: 600;
-    text-align: center; /* Ensure headers are also centered */
-}
-
-.account-table tr:nth-child(even) {
-    background: #f9f9f9;
-}
-
-.account-table tr:hover {
-    background: var(--hover-grey);
+/* Action Buttons */
+.account-table td .action-btn {
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-size: 0.8rem;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.account-table td.status {
-    font-weight: 600;
-    text-transform: capitalize;
-    text-align: center; /* Ensure status column is centered */
+.action-btn.edit-btn {
+    background: var(--blue);
 }
 
-/* User Levels */
-.account-table td.status.admin {
-    color: var(--blue);
+.action-btn.edit-btn:hover {
+    background: var(--hover-blue);
 }
 
-.account-table td.status.user {
-    color: var(--green);
+.action-btn.delete-btn {
+    background: var(--red);
 }
 
-.account-table td.status.guest {
-    color: var(--dark-grey);
+.action-btn.delete-btn:hover {
+    background: darkred;
 }
 
-/* User Status */
-.account-table td.status.active {
-    color: var(--green);
+
+/* Pagination */
+.pagination {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
 }
 
-.account-table td.status.inactive {
-    color: var(--red);
+.pagination button {
+    padding: 5px 10px;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    background: var(--blue);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
+
+.pagination button:hover {
+    background: var(--hover-blue);
+}
+
 
 /* Action Buttons */
 .action-btn {
@@ -606,66 +638,6 @@ main .breadcrumbs li a.active {
 }
 
 
-/* Pagination */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    gap: 8px;
-    padding: 8px 0;
-}
-
-.pagination button {
-    background: var(--light);
-    border: 1px solid var(--grey);
-    border-radius: 6px;
-    padding: 8px 14px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.pagination button.active {
-    background: var(--blue);
-    color: var(--light);
-    border: 1px solid var(--blue);
-}
-
-.pagination button:hover:not(.active) {
-    background: var(--hover-grey);
-    color: var(--blue);
-}
-
-/* Filter Container */
-.filter-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.filter-container label {
-    font-size: 14px;
-    color: var(--dark-grey);
-    font-weight: 500;
-}
-
-.filter-container select {
-    padding: 8px 10px;
-    font-size: 14px;
-    border: 1px solid var(--grey);
-    border-radius: 6px;
-    background: var(--light);
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.filter-container select:focus {
-    border-color: var(--blue);
-    box-shadow: 0 0 6px rgba(13, 7, 117, 0.2);
-}
 
 
 /* MAIN */

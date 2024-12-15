@@ -101,49 +101,44 @@
 
 <!-- MAIN -->
 <main>
-    <h1 class="title">Transactions</h1>
+    <h1 class="title">Transaction History</h1>
     <ul class="breadcrumbs">
         <li><a href="#">Home</a></li>
         <li class="divider">/</li>
-        <li><a href="#" class="active">View Transactions</a></li>
+        <li><a href="#" class="active">Transaction History</a></li>
     </ul>
 
-<!-- Filter Buttons -->
-<div class="filter-buttons">
-    <button class="filter-btn" onclick="filterTransactions('completed')">Completed</button>
-    <button class="filter-btn" onclick="filterTransactions('rejected')">Rejected</button>
-    <button class="filter-btn" onclick="filterTransactions('pending')">Pending</button>
-</div>
-
-<!-- Transactions Table -->
-<div class="transactions">
-    <div class="head">
-        <h3>Transaction History</h3>
+    <!-- Transactions Table -->
+    <div class="transactions">
+        <div class="head">
+            <h3>Transaction History</h3>
+            <div class="filter-container">
+                <label for="category-filter">Filter by Category:</label>
+                <select id="category-filter" onchange="filterTransactionsByCategory()">
+                    <option value="all">All</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+        </div>
+        <table class="transaction-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="transaction-tbody">
+                <!-- Transaction rows will be dynamically added via JavaScript -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <!-- Pagination buttons will be dynamically added here -->
+        </div>
     </div>
-    <table class="transaction-table">
-     <thead>
-    <tr>
-        <th>Date</th>
-        <th>Description</th>
-        <th>Category</th>
-        <th>Amount</th>
-        <th>Status</th>
-        <th>Action</th>
-    </tr>
-</thead>
-    
-        <tbody id="transaction-tbody">
-            <!-- Rows will be dynamically added by JavaScript -->
-        </tbody>
-    </table>
-    <div class="pagination">
-        <!-- Pagination buttons will be dynamically added here -->
-    </div>
-</div>
-
-
 </main>
-
 
 
 	</section>

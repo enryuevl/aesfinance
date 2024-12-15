@@ -107,39 +107,42 @@
         <li><a href="#" class="active">View Accounts</a></li>
     </ul>
 
-    <!-- Dropdown Filter -->
-    <div class="filter-container">
-        <label for="user-level-filter">Filter by User Level:</label>
-        <select id="user-level-filter" onchange="filterTableByUserLevel()">
-            <option value="all">All</option>
-            <option value="admin">Admin</option>
-            <option value="user">User</option>
-            <option value="guest">Guest</option>
-        </select>
-    </div>
-
-    <!-- Accounts Table -->
-    <div class="accounts">
-        <div class="head">
-            <h3>Registered Account Data</h3>
+   <!-- Accounts Table -->
+<div class="accounts">
+    <div class="head">
+        <h3>Registered Account Data</h3>
+        <div class="filter-container">
+            <label for="user-level-filter">Filter by User Level:</label>
+            <select id="user-level-filter" onchange="filterTableByUserLevel()">
+                <option value="all">All</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <option value="guest">Guest</option>
+            </select>
         </div>
-        <table class="account-table">
-            <thead>
-                <tr>
-                    <th>User ID</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>User Level</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="account-tbody">
-                <!-- Rows will be dynamically added here -->
-            </tbody>
-        </table>
     </div>
+    <table class="account-table">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>User Level</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="account-tbody">
+            <!-- Account rows will be dynamically added via JavaScript -->
+        </tbody>
+    </table>
+    <div class="pagination">
+        <!-- Pagination buttons will be dynamically added here -->
+    </div>
+</div>
+
 </main>
+
 
 
 

@@ -490,202 +490,97 @@ main .breadcrumbs li a.active {
     pointer-events: none;
     font-weight: bold;
 }
-
-/* Filter Buttons */
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin: 20px 0; /* Add spacing above and below */
-}
-
-.filter-btn {
-    padding: 10px 20px;
-    background: var(--blue);
-    color: var(--light);
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-.filter-btn.active {
-    background: var(--light-blue);
-    color: var(--light);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.filter-btn:hover:not(.active) {
-    background: var(--light-blue);
-    color: var(--light);
-    transform: scale(1.05); /* Slight hover effect */
-}
-
-/* Transactions Table */
+/* Table Layout */
 .transactions {
-    margin: 20px auto;
-    width: 95%;
-    background: var(--light);
-    border-radius: 10px;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 .transactions .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px 20px;
     background: var(--blue);
-    color: var(--light);
-    font-size: 18px;
-    font-weight: bold;
+    color: #fff;
 }
 
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-container label {
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.filter-container select {
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+/* Table Design */
 .transaction-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: auto;
+    margin: 0;
+}
+
+.transaction-table thead {
+    background: var(--light-blue);
+    color: #fff;
 }
 
 .transaction-table th,
 .transaction-table td {
     padding: 15px;
     text-align: left;
-    font-size: 14px;
-    color: var(--dark);
     border-bottom: 1px solid var(--grey);
-    vertical-align: middle; /* Ensures vertical centering of content */
+    font-size: 0.95rem;
 }
 
-.transaction-table th:nth-child(6),
-.transaction-table td:nth-child(6) {
-    text-align: center; /* Center the action buttons */
-    vertical-align: middle;
-}
-
-.transaction-table th {
-    background: var(--light-blue);
-    color: var(--light);
-    font-weight: 600;
-}
-
-.transaction-table tr:nth-child(even) {
+.transaction-table tbody tr:nth-child(even) {
     background: #f9f9f9;
 }
 
-.transaction-table tr:hover {
+.transaction-table tbody tr:hover {
     background: var(--hover-grey);
+}
+
+/* Pagination */
+.pagination {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    background: var(--blue);
+    color: #fff;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.transaction-table td.status {
-    font-weight: 600;
-    text-transform: capitalize;
+.pagination button:hover {
+    background: var(--hover-blue);
 }
-
-.transaction-table td.status.completed {
-    color: var(--green);
-}
-
-.transaction-table td.status.pending {
-    color: #FFC107;
-}
-
-.transaction-table td.status.rejected {
-    color: var(--red);
-}
-/* Action Buttons */
-.action-btn {
-    padding: 6px 12px;
-    font-size: 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 0 5px; /* Adds spacing between buttons */
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.confirm-btn {
-    background-color: var(--green);
-    color: var(--light);
-}
-
-.confirm-btn:hover {
-    background-color: #68c233; /* Slightly lighter green */
-}
-
-.reject-btn {
-    background-color: var(--red);
-    color: var(--light);
-}
-
-.reject-btn:hover {
-    background-color: #e53945; /* Slightly lighter red */
-}
-
-.edit-btn {
-    background-color: var(--light-blue);
-    color: var(--light);
-}
-
-.edit-btn:hover {
-    background-color: #6a5ebd; /* Slightly darker light-blue */
-}
-/* Add extra space to the Action column */
-.transaction-table th:nth-child(6) {
-    width: 20%; /* Adjust width for better button spacing */
-}
-
-
 
 /* MAIN */
 
 /* CONTENT */
 
-/* Pagination */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px; /* Reduced margin to bring buttons closer to the table */
-    gap: 8px; /* Slightly increased spacing between buttons */
-    padding: 8px 0; /* Added padding for better alignment */
-}
-
-/* Pagination Buttons */
-.pagination button {
-    background: var(--light);
-    border: 1px solid var(--grey);
-    border-radius: 6px; /* Slightly more rounded corners */
-    padding: 8px 14px; /* Increased padding for a balanced look */
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.pagination button.active {
-    background: var(--blue);
-    color: var(--light);
-    border: 1px solid var(--blue);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Highlight active button */
-}
-
-.pagination button:hover:not(.active) {
-    background: var(--hover-grey);
-    color: var(--blue);
-    transform: translateY(-2px); /* Slight lift on hover */
-}
-
-.pagination button:disabled {
-    background: var(--grey);
-    color: var(--dark-grey);
-    cursor: not-allowed;
-    border: 1px solid var(--grey);
-    box-shadow: none; /* No shadow for disabled buttons */
-}
 
 
 
