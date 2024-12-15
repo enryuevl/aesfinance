@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="cssdashboard.css">
+	<title>AES Finance</title>
+</head>
+<body>
+	
+	<!-- SIDEBAR -->
+
+<section id="sidebar">
+    <div class="logo-title">
+        <img src="aeslogo.png" alt="AES Logo" class="logo">
+        <span class="title">AES Finance</span>
+    </div>
+    <ul class="side-menu">
+        <li><a href="#" class="active"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
+        <li class="divider" data-text="management">Management</li>
+        <li>
+            <a href="#"><i class='bx bx-wallet icon'></i> Accounts <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Accounts</a></li>
+                <li><a href="#">Add Account</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-transfer-alt icon'></i> Transactions <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Transactions</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-credit-card icon'></i> Payments <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Payments</a></li>
+                <li><a href="#">Add Payment</a></li>
+                <li><a href="#">Recurring Payments</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-pie-chart-alt icon'></i> Fund Allocation <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Allocations</a></li>
+                <li><a href="#">Allocate Funds</a></li>
+                <li><a href="#">Budget Planning</a></li>
+            </ul>
+        </li>
+        <li class="divider" data-text="settings">Settings</li>
+        <li>
+            <a href="#"><i class='bx bxs-user-circle icon'></i> User Profile</a>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-cog icon'></i> System Settings</a>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-log-out icon'></i> Logout</a>
+        </li>
+    </ul>
+</section>
+
+
+	<!-- SIDEBAR -->
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon'></i> Profile</a>
+					<li><a href="#"><i class='bx bx-cog icon'></i> Settings</a>
+					<li><a href="#"><i class='bx bx-log-out icon'></i> Logout</a>
+				</ul>
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+<!-- MAIN -->
+<main>
+    <h1 class="title">Fund Management Overview</h1>
+    <ul class="breadcrumbs">
+        <li><a href="#">Home</a></li>
+        <li class="divider">/</li>
+        <li><a href="#" class="active">Dashboard</a></li>
+    </ul>
+
+    <!-- Info Cards -->
+    <div class="info-data">
+        <div class="card">
+            <div class="head">
+                <div>
+                    <h2>₱625,000</h2>
+                    <p>Fund Allocation</p>
+                </div>
+                <i class='bx bx-pie-chart-alt icon'></i>
+            </div>
+            <span class="progress" data-value="75%"></span>
+            <span class="label">75% Allocated</span>
+        </div>
+        <div class="card">
+            <div class="head">
+                <div>
+                    <h2>₱250,000</h2>
+                    <p>Income Overview</p>
+                </div>
+                <i class='bx bx-line-chart icon'></i>
+            </div>
+            <span class="progress" data-value="40%"></span>
+            <span class="label">40% Target Reached</span>
+        </div>
+        <div class="card">
+            <div class="head">
+                <div>
+                    <h2>₱190,000</h2>
+                    <p>Expenses</p>
+                </div>
+                <i class='bx bx-bar-chart-alt icon down'></i>
+            </div>
+            <span class="progress" data-value="50%"></span>
+            <span class="label">50% of Budget</span>
+        </div>
+        <div class="card">
+            <div class="head">
+                <div>
+                    <h2>₱435,000</h2>
+                    <p>Recent Transactions</p>
+                </div>
+                <i class='bx bx-transfer icon'></i>
+            </div>
+            <span class="progress" data-value="90%"></span>
+            <span class="label">90% Processed</span>
+        </div>
+    </div>
+
+<!-- Detailed Sections -->
+<div class="data">
+    <!-- Fund Allocation Overview -->
+    <div class="content-data fund-allocation">
+        <div class="head">
+            <h3>Fund Allocation Overview</h3>
+            <div class="menu">
+                <i class='bx bx-dots-horizontal-rounded icon'></i>
+                <ul class="menu-link">
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">Save</a></li>
+                    <li><a href="#">Remove</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="overview">
+            <div class="item">
+                <i class="bx bx-wallet icon"></i>
+                <span>Operational Expenses</span>
+                <strong>₱200,000</strong>
+                <p>40%</p>
+            </div>
+            <div class="item">
+                <i class="bx bx-chart icon"></i>
+                <span>Marketing</span>
+                <strong>₱125,000</strong>
+                <p>25%</p>
+            </div>
+            <div class="item">
+                <i class="bx bx-receipt icon"></i>
+                <span>Research & Development</span>
+                <strong>₱75,000</strong>
+                <p>15%</p>
+            </div>
+            <div class="item">
+                <i class="bx bx-bank icon"></i>
+                <span>Reserve Funds</span>
+                <strong>₱100,000</strong>
+                <p>20%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Income Overview -->
+    <div class="content-data income-overview">
+        <div class="head">
+            <h3>Income Overview</h3>
+            <div class="menu">
+                <i class='bx bx-dots-horizontal-rounded icon'></i>
+                <ul class="menu-link">
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">Save</a></li>
+                    <li><a href="#">Remove</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="overview">
+            <div class="item">
+                <i class="bx bx-line-chart icon"></i>
+                <span>Product Sales</span>
+                <strong>₱200,000</strong>
+            </div>
+            <div class="item">
+                <i class="bx bx-pie-chart-alt icon"></i>
+                <span>Service Income</span>
+                <strong>₱50,000</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expenses Breakdown -->
+    <div class="content-data expenses-breakdown">
+        <div class="head">
+            <h3>Expenses Breakdown</h3>
+            <div class="menu">
+                <i class='bx bx-dots-horizontal-rounded icon'></i>
+                <ul class="menu-link">
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">Save</a></li>
+                    <li><a href="#">Remove</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="overview">
+            <div class="item">
+                <i class="bx bx-user icon"></i>
+                <span>Employee Salaries</span>
+                <strong>₱100,000</strong>
+            </div>
+            <div class="item">
+                <i class="bx bx-clipboard icon"></i>
+                <span>Office Supplies</span>
+                <strong>₱30,000</strong>
+            </div>
+            <div class="item">
+                <i class="bx bx-home icon"></i>
+                <span>Utilities</span>
+                <strong>₱25,000</strong>
+            </div>
+            <div class="item">
+                <i class="bx bx-dots-horizontal-rounded icon"></i>
+                <span>Miscellaneous</span>
+                <strong>₱35,000</strong>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+<!-- MAIN -->
+
+
+	</section>
+	<!-- NAVBAR -->
+
+	<script src="script.js"></script>
+</body>
+</html>

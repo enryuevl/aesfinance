@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="cssaddtransact.css">
+	<title>AES Fi</title>
+</head>
+<body>
+	
+	<!-- SIDEBAR -->
+
+<section id="sidebar">
+    <div class="logo-title">
+        <img src="aeslogo.png" alt="AES Logo" class="logo">
+        <span class="title">AES Finance</span>
+    </div>
+    <ul class="side-menu">
+        <li><a href="#" class="active"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
+        <li class="divider" data-text="management">Management</li>
+        <li>
+            <a href="#"><i class='bx bx-wallet icon'></i> Accounts <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Accounts</a></li>
+                <li><a href="#">Add Account</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-transfer-alt icon'></i> Transactions <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Transactions</a></li>
+                <li><a href="#">Add Transaction</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-credit-card icon'></i> Payments <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Payments</a></li>
+                <li><a href="#">Add Payment</a></li>
+                <li><a href="#">Recurring Payments</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-pie-chart-alt icon'></i> Fund Allocation <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Allocations</a></li>
+                <li><a href="#">Allocate Funds</a></li>
+                <li><a href="#">Budget Planning</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class='bx bxs-file-doc icon'></i> Reports</a>
+        </li>
+        <li class="divider" data-text="settings">Settings</li>
+        <li>
+            <a href="#"><i class='bx bxs-user-circle icon'></i> User Profile</a>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-cog icon'></i> System Settings</a>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-log-out icon'></i> Logout</a>
+        </li>
+    </ul>
+</section>
+
+
+	<!-- SIDEBAR -->
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</sp an>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon'></i> Profile</a>
+					<li><a href="#"><i class='bx bx-cog icon'></i> Settings</a>
+					<li><a href="#"><i class='bx bx-log-out icon'></i> Logout</a>
+				</ul>
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+<!-- MAIN -->
+<main>
+    <div class="add-payment">
+        <h1>Add Payment</h1>
+        <form>
+            <div class="form-group">
+                <label for="payment-date">Date of Payment</label>
+                <input type="date" id="payment-date" name="payment_date" required>
+            </div>
+            <div class="form-group">
+                <label for="payment-amount">Payment Amount (PHP)</label>
+                <input type="number" id="payment-amount" name="payment_amount" placeholder="Enter amount in PHP" required>
+            </div>
+            <div class="form-group">
+                <label for="payer-name">Name of Payer</label>
+                <input type="text" id="payer-name" name="payer_name" placeholder="Enter name of the one who paid" required>
+            </div>
+            <div class="form-group">
+                <label for="payment-purpose">Purpose of Payment</label>
+                <textarea id="payment-purpose" name="payment_purpose" placeholder="Enter purpose of payment (e.g., field trip, event)" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="receipt-number">Receipt Number</label>
+                <input type="text" id="receipt-number" name="receipt_number" placeholder="Enter receipt number" required>
+            </div>
+            <button type="submit" class="submit-btn">Add Payment</button>
+        </form>
+    </div>
+</main>
+
+
+
+
+
+
+	</section>
+	<!-- NAVBAR -->
+
+    
+ 
+	<script src="script.js"></script>
+</body>
+</html>
