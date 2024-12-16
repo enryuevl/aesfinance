@@ -11,61 +11,58 @@
 	
 	<!-- SIDEBAR -->
 
-<section id="sidebar">
-    <div class="logo-title">
-        <img src="aeslogo.png" alt="AES Logo" class="logo">
-        <span class="title">AES Finance</span>
-    </div>
-    <ul class="side-menu">
-        <li><a href="#" class="active"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
-        <li class="divider" data-text="management">Management</li>
-        <li>
-            <a href="#"><i class='bx bx-wallet icon'></i> Accounts <i class='bx bx-chevron-right icon-right'></i></a>
-            <ul class="side-dropdown">
-                <li><a href="#">View Accounts</a></li>
-                <li><a href="#">Add Account</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class='bx bx-transfer-alt icon'></i> Transactions <i class='bx bx-chevron-right icon-right'></i></a>
-            <ul class="side-dropdown">
-                <li><a href="#">View Transactions</a></li>
-                <li><a href="#">Add Transaction</a></li>
-            </ul>
-        </li>
-        <li>
+    <section id="sidebar">
+        <div class="logo-title">
+            <img src="aeslogo.png" alt="AES Logo" class="logo">
+            <span class="title">AES Finance</span>
+        </div>
+        <ul class="side-menu">
+            <li><a href="#" class="active" data-target="dashboard.html"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
+            <li class="divider" data-text="management">Management</li>
+            <li>
+                <a href="#"><i class='bx bx-wallet icon'></i> Accounts <i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#" data-target="aesviewaccounts.html">View Accounts</a></li>
+                    <li><a href="#" data-target="aescreateaccounts.html">Add Account</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class='bx bx-transfer-alt icon'></i> Transactions <i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#" data-target="aesviewtransaction.html">View Transactions</a></li>
+                    <li><a href="#" data-target="addtransaction.html">Add Transaction</a></li>
+                </ul>
+            </li>
             <li>
                 <a href="#"><i class='bx bx-credit-card icon'></i> Payments <i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">Payment Configuration</a></li>
-                    <li><a href="#">Register Payment</a></li>
-                    <li><a href="#">View Unpaid Balance</a></li>
+                    <li><a href="#" data-target="aesconfigurepayment.html">Payment Configuration</a></li>
+                    <li><a href="#" data-target="aesregisterpayment.html">Register Payment</a></li>
                 </ul>
             </li>
-        </li>
-        <li>
-            <a href="#"><i class='bx bx-pie-chart-alt icon'></i> Fund Allocation <i class='bx bx-chevron-right icon-right'></i></a>
-            <ul class="side-dropdown">
-                <li><a href="#">View Allocations</a></li>
-                <li><a href="#">Allocate Funds</a></li>
-                <li><a href="#">Budget Planning</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class='bx bx-history icon'></i> Logs</a>
-        </li>
-        <li class="divider" data-text="settings">Settings</li>
-        <li>
-            <a href="#"><i class='bx bxs-user-circle icon'></i> User Profile</a>
-        </li>
-        <li>
-            <a href="#"><i class='bx bx-cog icon'></i> System Settings</a>
-        </li>
-        <li>
-            <a href="#"><i class='bx bx-log-out icon'></i> Logout</a>
-        </li>
-    </ul>
-</section>
+            <li>
+                <a href="#"><i class='bx bx-pie-chart-alt icon'></i> Fund Allocation <i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#" data-target="aesfundallocate.html">Allocate Funds</a></li>
+                    <li><a href="#" data-target="viewallocations.html">View Allocations</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class='bx bx-history icon'></i> Logs</a>
+            </li>
+            <li class="divider" data-text="settings">Settings</li>
+            <li>
+                <a href="#"><i class='bx bxs-user-circle icon'></i> User Profile</a>
+            </li>
+            <li>
+                <a href="#"><i class='bx bx-cog icon'></i> System Settings</a>
+            </li>
+            <li>
+                <a href="#" data-target="aeslogin.html"><i class='bx bx-log-out icon'></i> Logout</a>
+            </li>
+        </ul>
+    </section>
+    
 
 
 	<!-- SIDEBAR -->
@@ -155,7 +152,7 @@
                 </div>
                 <div class="event-item">
                     <h3>Community Outreach</h3>
-                    <p><strong>Goal:</strong> ₱80,000</p>
+                    z <p><strong>Goal:</strong> ₱80,000</p>
                     <p><strong>Purpose:</strong> Supporting outreach programs in local communities.</p>
                     <div class="btn-group">
                         <button class="btn">Edit</button>

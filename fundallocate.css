@@ -58,6 +58,12 @@ li {
 }
 
 /* SIDEBAR */
+#sidebar .side-menu a.active {
+    background-color: var(--blue);
+    color: var(--light);
+    font-weight: bold;
+}
+
 #sidebar {
     position: fixed;
     max-width: 260px;

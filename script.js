@@ -158,8 +158,34 @@ allProgress.forEach(item=> {
 	item.style.setProperty('--value', item.dataset.value)
 })
 
+// Handle Active State for Sidebar Links
+const sideMenuLinks = document.querySelectorAll('#sidebar .side-menu a[data-target]');
+const mainContainer = document.querySelector('main');
 
+sideMenuLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
 
+        // Remove 'active' class from all links
+        sideMenuLinks.forEach(item => item.classList.remove('active'));
 
+        // Add 'active' class to the clicked link
+        this.classList.add('active');
 
+        // Get the target HTML file from data-target attribute
+        const targetFile = this.getAttribute('data-target');
 
+        // Fetch the target HTML file and update the main container
+        fetch(targetFile)
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load content');
+                return response.text();
+            })
+            .then(html => {
+                mainContainer.innerHTML = html; // Replace main content with fetched content
+            })
+            .catch(error => {
+                mainContainer.innerHTML = `<h1>Error</h1><p>Unable to load content: ${error.message}</p>`; // Show error message in main
+            });
+    });
+});
