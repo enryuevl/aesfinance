@@ -9,9 +9,8 @@ const transactions = [
     { date: '2024-12-03', description: 'Donation for School Development', category: 'Income', amount: '₱20,000' },
     { date: '2024-12-02', description: 'Teacher Salary Payment', category: 'Expense', amount: '₱50,000' },
     { date: '2024-12-01', description: 'Canteen Revenue', category: 'Income', amount: '₱12,000' },
-    // Additional sample data
     ...Array.from({ length: 30 }, (_, i) => ({
-        date: `2024-12-${Math.max(1, 30 - i)}`,
+        date: `2024-12-${String(Math.max(1, 30 - i)).padStart(2, '0')}`,
         description: `Sample Transaction ${i + 1}`,
         category: i % 2 === 0 ? 'Income' : 'Expense',
         amount: `₱${(i + 1) * 1000}`,
@@ -78,6 +77,43 @@ function filterTransactionsByCategory() {
     currentCategoryFilter = categoryFilter;
     currentPage = 1; // Reset to first page after filtering
     renderTable(currentCategoryFilter, currentPage);
+}
+
+// Generate Report Function
+function generateReport() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Title for PDF
+    doc.setFontSize(18);
+    doc.text('Transaction History Report', 14, 20);
+
+    // Table Headers and Data
+    const headers = [['Date', 'Description', 'Category', 'Amount']];
+    const filteredTransactions = currentCategoryFilter === 'all'
+        ? transactions
+        : transactions.filter(t => t.category.toLowerCase() === currentCategoryFilter);
+
+    const rows = filteredTransactions.map(t => [t.date, t.description, t.category, t.amount]);
+
+    // Use autoTable to create the table
+    doc.autoTable({
+        head: headers,
+        body: rows,
+        startY: 30,
+        theme: 'grid',
+        styles: {
+            fontSize: 10,
+            cellPadding: 3,
+        },
+        headStyles: {
+            fillColor: [13, 7, 117], // Blue theme
+            textColor: [255, 255, 255], // White text
+        },
+    });
+
+    // Save PDF
+    doc.save('transaction-report.pdf');
 }
 
 // Initial render

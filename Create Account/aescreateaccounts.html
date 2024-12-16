@@ -98,78 +98,75 @@
 		</nav>
 		<!-- NAVBAR -->
 
+
 <!-- MAIN -->
 <main>
-    <h1 class="title">Create Account</h1>
+    <!-- Title and Breadcrumbs -->
+    <h1 class="title">Create New Account</h1>
     <ul class="breadcrumbs">
         <li><a href="#">Home</a></li>
         <li class="divider">/</li>
         <li><a href="#" class="active">Create Account</a></li>
     </ul>
 
-<!-- Page Introduction -->
-<div class="intro">
-    <p class="intro-text">
-        <i class='bx bx-info-circle intro-icon'></i>
-        Please fill in the required information below to set up a new account. Make sure all details are accurate to prevent delays or errors during processing.
-    </p>
-</div>
-
-
-
-    <!-- Create Account Form -->
+    <!-- Form Container -->
     <div class="form-container">
         <div class="head">
-            <h3>Account Information</h3>
+            <h3>Account Registration</h3>
+            <p>Please fill out the form to register a new account.</p>
         </div>
         <form id="create-account-form">
-            <!-- First Name -->
-            <div class="form-group">
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" placeholder="Enter First Name" required>
+            <!-- Name Fields -->
+            <div class="form-group-row">
+                <div class="form-group half-width">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" placeholder="Enter first name" required>
+                </div>
+                <div class="form-group half-width">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" placeholder="Enter last name" required>
+                </div>
             </div>
-            
-            <!-- Last Name -->
+
+            <!-- Email -->
             <div class="form-group">
-                <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" placeholder="Enter Last Name" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter email address" required>
             </div>
-            
-            <!-- Role -->
+
+            <!-- User Level -->
             <div class="form-group">
-                <label for="role">Role</label>
-                <select id="role" required>
-                    <option value="" disabled selected>Select Role</option>
+                <label for="user-level">User Level</label>
+                <select id="user-level" required>
+                    <option value="" disabled selected>Select user level</option>
                     <option value="admin">Admin</option>
-                    <option value="teacher">Faculty</option>
+                    <option value="faculty">Faculty</option>
                     <option value="parent">Parent</option>
                 </select>
             </div>
-            
-            <!-- Email -->
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter Email Address" required>
+
+            <!-- Password Fields -->
+            <div class="form-group-row">
+                <div class="form-group half-width">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+                <div class="form-group half-width">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm password" required>
+                </div>
             </div>
-            
-            <!-- Status -->
-            <div class="form-group">
-                <label for="status">Status</label>
-                <select id="status" required>
-                    <option value="" disabled selected>Select Status</option>
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
-                </select>
-            </div>
-            
-            <!-- Buttons -->
+
+            <!-- Action Buttons -->
             <div class="form-buttons">
-                <button type="submit" class="action-btn confirm-btn">Create</button>
-                <button type="reset" class="action-btn reject-btn">Cancel</button>
+                <button type="submit" class="action-btn confirm-btn">Create Account</button>
+                <button type="reset" class="action-btn reject-btn">Reset</button>
             </div>
         </form>
     </div>
 </main>
+
+
 
 
 	</section>

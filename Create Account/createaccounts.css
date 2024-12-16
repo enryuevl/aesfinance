@@ -418,103 +418,6 @@ nav .nav-link .icon:hover {
 
 
 /* MAIN */
-/* Page Introduction Styling */
-.intro {
-    background: #f4f6f9; /* Soft background color */
-    border-left: 4px solid var(--blue); /* Accent border */
-    border-radius: 8px;
-    padding: 15px 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.intro-text {
-    font-size: 1rem; /* Clean text size */
-    line-height: 1.5; /* Comfortable line spacing */
-    color: var(--grey-dark); /* Softer grey for readability */
-    margin: 0;
-    display: flex;
-    align-items: center; /* Align icon and text */
-    gap: 10px; /* Space between icon and text */
-}
-
-.intro-icon {
-    font-size: 1.4rem; /* Icon size matches text height */
-    color: var(--blue); /* Theme color for the icon */
-}
-
-
-/* Form Styling */
-.form-container {
-    margin-top: 20px;
-    padding: 20px 30px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--dark);
-}
-
-input,
-select {
-    width: 100%;
-    padding: 12px 15px;
-    font-size: 1rem;
-    border: 1px solid var(--grey);
-    border-radius: 8px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-input:focus,
-select:focus {
-    border-color: var(--blue);
-    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
-}
-
-.form-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-}
-
-.action-btn {
-    flex: 1;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.confirm-btn {
-    background-color: var(--green);
-}
-
-.confirm-btn:hover {
-    background-color: darken(var(--green), 10%);
-}
-
-.reject-btn {
-    background-color: var(--red);
-}
-
-.reject-btn:hover {
-    background-color: darken(var(--red), 10%);
-}
-
 /* General Layout */
 main {
     width: 100%;
@@ -527,165 +430,157 @@ main {
 main .title {
     font-size: 28px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: var(--blue);
-    text-align: left; /* Align to the left for consistency */
 }
 
-/* Breadcrumbs */
 main .breadcrumbs {
     display: flex;
     gap: 8px;
     margin-bottom: 30px;
 }
+
 main .breadcrumbs li,
 main .breadcrumbs li a {
     font-size: 14px;
     color: var(--dark-grey);
 }
+
 main .breadcrumbs li a {
     color: var(--blue);
     text-decoration: none;
 }
+
 main .breadcrumbs li a.active,
 main .breadcrumbs li.divider {
     color: var(--dark-grey);
     pointer-events: none;
 }
-/* Main Section */
-main {
-    width: 100%;
-    padding: 24px 20px;
-    background-color: var(--grey);
-    border-radius: 10px;
-}
 
-/* Title Styling */
-main .title {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: var(--blue);
-}
-
-/* Breadcrumbs */
-main .breadcrumbs {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 30px;
-}
-main .breadcrumbs li,
-main .breadcrumbs li a {
-    font-size: 14px;
-    color: var(--dark-grey);
-}
-main .breadcrumbs li a {
-    color: var(--blue);
-    text-decoration: none;
-}
-main .breadcrumbs li a.active {
-    pointer-events: none;
-    font-weight: bold;
-}
 /* Form Container */
 .form-container {
-    margin: 20px auto;
-    width: 95%;
-    max-width: 600px;
+    margin: 0 auto;
+    max-width: 700px;
     background: var(--light);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid var(--blue);
 }
 
 .form-container .head {
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--grey);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    text-align: left;
 }
 
 .form-container .head h3 {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     color: var(--blue);
+    margin-bottom: 5px;
 }
 
-/* Form Styling */
-#create-account-form {
+.form-container .head p {
+    font-size: 14px;
+    color: var(--dark-grey);
+    margin: 0;
+}
+
+/* Form Group Layout */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group-row {
     display: flex;
-    flex-direction: column;
     gap: 20px;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
+.form-group.half-width {
+    flex: 1;
 }
 
 .form-group label {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--dark-grey);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    display: block;
 }
 
 .form-group input,
 .form-group select {
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
     font-size: 14px;
     border: 1px solid var(--grey);
-    border-radius: 6px;
-    outline: none;
-    transition: border-color 0.3s ease;
-    background: var(--light);
+    border-radius: 8px;
+    background: #f9f9f9;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     border-color: var(--blue);
-    box-shadow: 0 0 8px rgba(13, 7, 117, 0.2);
+    box-shadow: 0 0 8px rgba(13, 7, 117, 0.3);
 }
 
 /* Buttons */
 .form-buttons {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 15px;
 }
 
 .action-btn {
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 14px;
+    font-weight: bold;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    color: #fff;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
+/* Confirm Button (Theme Blue) */
 .confirm-btn {
-    background-color: var(--green);
-    color: var(--light);
+    background-color: var(--blue); /* Theme primary blue */
 }
 
 .confirm-btn:hover {
-    background-color: #68c233;
-    transform: scale(1.05);
+    background-color: var(--light-blue); /* Slightly lighter blue on hover */
+    transform: translateY(-2px);
 }
 
+/* Reject Button (Grey for Cancel/Reset) */
 .reject-btn {
-    background-color: var(--red);
-    color: var(--light);
+    background-color: var(--grey);
+    color: var(--dark); /* Dark text for contrast */
+    border: 1px solid var(--dark-grey);
 }
 
 .reject-btn:hover {
-    background-color: #e53945;
-    transform: scale(1.05);
+    background-color: var(--dark-grey);
+    color: #fff;
+    transform: translateY(-2px);
 }
+
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+    main {
+        padding: 15px 10px;
+    }
+
     .form-container {
-        width: 90%;
+        padding: 20px;
+    }
+
+    .form-group-row {
+        flex-direction: column;
+        gap: 10px;
     }
 
     .form-buttons {
@@ -696,25 +591,4 @@ main .breadcrumbs li a.active {
     .action-btn {
         width: 100%;
     }
-}
-
-/* MAIN */
-
-/* CONTENT */
-
-
-
-
-
-
-@media screen and (max-width: 768px) {
-	#content {
-		position: relative;
-		width: calc(100% - 60px);
-		transition: all .3s ease;
-	}
-	nav .nav-link,
-	nav .divider {
-		display: none;
-	}
 }

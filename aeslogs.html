@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="viewtransaction.css">
+	<link rel="stylesheet" href="logs.css">
 	<title>AES Finance</title>
 </head>
 <body>
@@ -99,62 +99,59 @@
 		<!-- NAVBAR -->
 
 <!-- MAIN -->
+<!-- MAIN -->
 <main>
-    <h1 class="title">Transaction History</h1>
+    <h1 class="title">Activity Logs</h1>
     <ul class="breadcrumbs">
         <li><a href="#">Home</a></li>
         <li class="divider">/</li>
-        <li><a href="#" class="active">Transaction History</a></li>
+        <li><a href="#" class="active">Logs</a></li>
     </ul>
 
-    <!-- Transactions Table -->
-    <div class="transactions">
+    <!-- Logs Section -->
+    <div class="logs-container">
         <div class="head">
-            <h3>Transaction History</h3>
+            <h3>Activity Logs</h3>
             <div class="filter-container">
-                <label for="category-filter">Filter by Category:</label>
-                <select id="category-filter" onchange="filterTransactionsByCategory()">
+                <label for="user-filter">Filter by User:</label>
+                <select id="user-filter" onchange="filterLogsByUser()">
                     <option value="all">All</option>
-                    <option value="income">Income</option>
-                    <option value="expense">Expense</option>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
                 </select>
-                <div class="generate-report-container">
-                    <button class="action-btn" id="generate-report-btn" onclick="generateReport()">
-                        <i class='bx bxs-file-pdf'></i> Generate Report
-                    </button>
-                </div>                
             </div>
         </div>
-        <table class="transaction-table">
+
+        <!-- Logs Table -->
+        <table class="logs-table">
             <thead>
                 <tr>
-                    <th>Date</th>
+                    <th>Date & Time</th>
+                    <th>User</th>
+                    <th>Action</th>
                     <th>Description</th>
-                    <th>Category</th>
-                    <th>Amount</th>
                 </tr>
             </thead>
-            <tbody id="transaction-tbody">
-                <!-- Transaction rows will be dynamically added via JavaScript -->
+            <tbody id="logs-tbody">
+                <!-- Log rows will be dynamically added here -->
             </tbody>
         </table>
-        <div class="pagination">
+
+        <!-- Pagination Controls -->
+        <div class="logs-pagination">
             <!-- Pagination buttons will be dynamically added here -->
         </div>
     </div>
+
 </main>
+
 
 
 	</section>
 	<!-- NAVBAR -->
 
-    <!-- jsPDF Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-
-    <!-- jsPDF AutoTable Plugin -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
-
-    <script src="viewtransactions.js"></script>
+    
+    <script src="logs.js".js></script>
 	<script src="script.js"></script>
 </body>
 </html>

@@ -490,8 +490,8 @@ main .breadcrumbs li a.active {
     pointer-events: none;
     font-weight: bold;
 }
-/* Table Layout */
-.transactions {
+/* General Layout for Logs */
+.logs-container {
     margin-top: 20px;
     background: #fff;
     border-radius: 8px;
@@ -499,28 +499,29 @@ main .breadcrumbs li a.active {
     overflow: hidden;
 }
 
-.transactions .head {
+.logs-container .head {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     background: var(--blue);
     color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
-.filter-container {
+.logs-container .filter-container {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-
-.filter-container label {
+.logs-container .filter-container label {
     font-size: 0.9rem;
     color: #fff;
 }
 
-.filter-container select {
+.logs-container .filter-container select {
     padding: 5px 10px;
     border: 1px solid #fff;
     border-radius: 5px;
@@ -528,67 +529,67 @@ main .breadcrumbs li a.active {
     color: var(--dark);
 }
 
-/* Table Design */
-.transaction-table {
+/* Logs Table Design */
+.logs-table {
     width: 100%;
     border-collapse: collapse;
     margin: 0;
 }
 
-.transaction-table thead {
+.logs-table thead {
     background: var(--light-blue);
     color: #fff;
 }
 
-.transaction-table th,
-.transaction-table td {
+.logs-table th,
+.logs-table td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid var(--grey);
     font-size: 0.95rem;
 }
 
-.transaction-table tbody tr:nth-child(even) {
+.logs-table tbody tr:nth-child(even) {
     background: #f9f9f9;
 }
 
-.transaction-table tbody tr:hover {
+.logs-table tbody tr:hover {
     background: var(--hover-grey);
 }
 
-/* Pagination Controls */
-.pagination {
+/* Pagination for Logs */
+.logs-pagination {
     padding: 10px 20px;
     display: flex;
     justify-content: center;
     gap: 5px;
 }
 
-.pagination button {
+.logs-pagination button {
     margin: 0 4px;
-    padding: 6px 10px; /* Reduced padding */
-    font-size: 0.8rem; /* Slightly smaller font size */
+    padding: 6px 10px;
+    font-size: 0.8rem;
     border: none;
-    border-radius: 4px; /* Slightly smaller border radius */
+    border-radius: 4px;
     cursor: pointer;
     background: #e0e0e0;
     color: var(--dark);
     transition: background-color 0.3s ease;
 }
 
-.pagination button:hover {
+.logs-pagination button:hover {
     background: var(--blue);
     color: white;
 }
 
-.pagination button.active {
+.logs-pagination button.active {
     background: var(--blue);
     color: white;
     font-weight: bold;
 }
 
-
-.action-btn {
+/* Action Button for Logs */
+.logs-action-btn {
     padding: 10px 20px;
     background-color: var(--light-blue); /* Light blue background */
     color: #fff; /* White text for contrast */
@@ -596,41 +597,38 @@ main .breadcrumbs li a.active {
     border-radius: 6px; /* Rounded corners */
     cursor: pointer;
     font-weight: bold;
-    font-size: 12px; /* Larger font size */
+    font-size: 14px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
 }
 
-.action-btn:hover {
+.logs-action-btn:hover {
     background-color: #726ed4; /* Slightly darker light blue for hover effect */
     transform: translateY(-2px); /* Lift effect */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
-.action-btn i {
-    font-size: 15px; /* Size of the icon */
-    margin-right: 6px; /* Space between icon and text */
+.logs-action-btn i {
+    font-size: 18px; /* Size of the icon */
 }
 
-
-
-/* MAIN */
-
-/* CONTENT */
-
-
-
-
-
-
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
-	#content {
-		position: relative;
-		width: calc(100% - 60px);
-		transition: all .3s ease;
-	}
-	nav .nav-link,
-	nav .divider {
-		display: none;
-	}
+    .logs-container {
+        padding: 10px;
+    }
+
+    .logs-table th,
+    .logs-table td {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .logs-action-btn {
+        width: 100%; /* Full width button */
+        justify-content: center;
+    }
 }
