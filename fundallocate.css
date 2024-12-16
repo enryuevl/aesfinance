@@ -417,7 +417,6 @@ nav .nav-link .icon:hover {
 /* Page Header */
 .page-header {
     padding: 20px;
-    background: var(--light);
     margin-bottom: 20px;
     border-bottom: 2px solid var(--grey);
 }
