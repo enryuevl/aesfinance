@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="fundallocate.css">
+	<title>AES Finance</title>
+</head>
+<body>
+	
+	<!-- SIDEBAR -->
+
+<section id="sidebar">
+    <div class="logo-title">
+        <img src="aeslogo.png" alt="AES Logo" class="logo">
+        <span class="title">AES Finance</span>
+    </div>
+    <ul class="side-menu">
+        <li><a href="#" class="active"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
+        <li class="divider" data-text="management">Management</li>
+        <li>
+            <a href="#"><i class='bx bx-wallet icon'></i> Accounts <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Accounts</a></li>
+                <li><a href="#">Add Account</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-transfer-alt icon'></i> Transactions <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Transactions</a></li>
+                <li><a href="#">Add Transaction</a></li>
+            </ul>
+        </li>
+        <li>
+            <li>
+                <a href="#"><i class='bx bx-credit-card icon'></i> Payments <i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">Payment Configuration</a></li>
+                    <li><a href="#">Register Payment</a></li>
+                    <li><a href="#">View Unpaid Balance</a></li>
+                </ul>
+            </li>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-pie-chart-alt icon'></i> Fund Allocation <i class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="#">View Allocations</a></li>
+                <li><a href="#">Allocate Funds</a></li>
+                <li><a href="#">Budget Planning</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-history icon'></i> Logs</a>
+        </li>
+        <li class="divider" data-text="settings">Settings</li>
+        <li>
+            <a href="#"><i class='bx bxs-user-circle icon'></i> User Profile</a>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-cog icon'></i> System Settings</a>
+        </li>
+        <li>
+            <a href="#"><i class='bx bx-log-out icon'></i> Logout</a>
+        </li>
+    </ul>
+</section>
+
+
+	<!-- SIDEBAR -->
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</sp an>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon'></i> Profile</a>
+					<li><a href="#"><i class='bx bx-cog icon'></i> Settings</a>
+					<li><a href="#"><i class='bx bx-log-out icon'></i> Logout</a>
+				</ul>
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+<!-- MAIN -->
+<!-- Page Header -->
+<div class="page-header">
+    <h1 class="title">Allocate Funds</h1>
+    <ul class="breadcrumbs">
+        <li><a href="#">Home</a></li>
+        <li class="divider">/</li>
+        <li><a href="#" class="active">Allocate Funds</a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<main>
+    <!-- Allocate Funds Section -->
+    <div class="allocate-funds">
+        <!-- Create Event Form -->
+        <div class="form-section">
+            <h2>Create Fund Allocation</h2>
+            <form id="create-fund-form">
+                <div class="form-group">
+                    <label for="event-title">Event Title</label>
+                    <input type="text" id="event-title" name="event_title" placeholder="e.g., Sports Day" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-goal">Fund Goal (PHP)</label>
+                    <input type="number" id="event-goal" name="event_goal" placeholder="e.g., 50000" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-purpose">Event Purpose</label>
+                    <textarea id="event-purpose" name="event_purpose" placeholder="Describe the purpose of this fund allocation" required></textarea>
+                </div>
+                <div class="btn-group">
+                    <button type="submit" class="btn">Create Allocation</button>
+                    <button type="reset" class="btn secondary">Clear</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Current Event List -->
+        <div class="event-list-section">
+            <h2>Current Allocations</h2>
+            <div class="event-list">
+                <!-- Example Event Items -->
+                <div class="event-item">
+                    <h3>Sports Day</h3>
+                    <p><strong>Goal:</strong> ₱50,000</p>
+                    <p><strong>Purpose:</strong> Organizing sports and recreational activities for students.</p>
+                    <div class="btn-group">
+                        <button class="btn">Edit</button>
+                        <button class="btn secondary">Delete</button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <h3>Community Outreach</h3>
+                    <p><strong>Goal:</strong> ₱80,000</p>
+                    <p><strong>Purpose:</strong> Supporting outreach programs in local communities.</p>
+                    <div class="btn-group">
+                        <button class="btn">Edit</button>
+                        <button class="btn secondary">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="btn secondary">Previous</button>
+                <button class="btn secondary">1</button>
+                <button class="btn secondary">2</button>
+                <button class="btn secondary">Next</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+	</section>
+	<!-- NAVBAR -->
+
+    
+ 
+	<script src="script.js"></script>
+</body>
+</html>
