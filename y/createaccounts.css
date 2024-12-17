@@ -487,9 +487,6 @@ main .breadcrumbs li.divider {
 }
 
 /* Form Group Layout */
-.form-group {
-    margin-bottom: 20px;
-}
 
 .form-group-row {
     display: flex;
@@ -531,6 +528,7 @@ main .breadcrumbs li.divider {
     display: flex;
     justify-content: flex-end;
     gap: 15px;
+    margin-top: 15px;
 }
 
 .action-btn {
