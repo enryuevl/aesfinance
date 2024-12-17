@@ -5,7 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AES Finance</title>
   <link rel="stylesheet" href="loginregister.css">
-  <script type="text/javascript" src="validation.js" defer></script>
+  <script type="text/javascript" defer>
+    // JavaScript for form validation and redirect
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("form");
+      const emailInput = document.getElementById("email-input");
+      const passwordInput = document.getElementById("password-input");
+      const errorMessage = document.getElementById("error-message");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        const email = emailInput.value;
+        const password = passwordInput.value;
+
+        // Check if the email and password are "admin"
+        if (email === "admin@gmail.com" && password === "admin") {
+  // Redirect to aesdashboard.html
+          window.location.href = "aesdashboard.html";
+        } else if (email !== "admin@gmail.com" || password !== "admin") {
+          // Redirect to aesuserdashboard.html for non-admin users
+          window.location.href = "aesuserdashboard.html";
+        } else {
+          // Show an error message
+          errorMessage.textContent = "Invalid email or password. Please try again.";
+          errorMessage.style.color = "red";
+        }
+      });
+    });
+  </script>
   <!-- Link to Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -31,5 +59,37 @@
     </form>
     <p>New here? <a href="aesregister.html">Create an Account</a></p>
   </div>
+
+  <script type="module">
+    // Import the functions you need from the Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCVv8SMFHuzf4VAKkFrNNJ2mGX0_6taViA",
+      authDomain: "aes-financial-management-sys.firebaseapp.com",
+      projectId: "aes-financial-management-sys",
+      storageBucket: "aes-financial-management-sys.appspot.com",
+      messagingSenderId: "371761913826",
+      appId: "1:371761913826:web:4456b561c6ab78b98ca3bb",
+      measurementId: "G-8LDE2T1PJW"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  
+    // Initialize Firebase Authentication
+    const auth = getAuth(app);
+  
+    // Initialize Firestore Database
+    const db = getFirestore(app);
+  
+    // You can now use `auth` and `db` in your application logic
+  </script>
+  
 </body>
 </html>

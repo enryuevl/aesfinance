@@ -43,5 +43,46 @@
     </form>
     <p>Already have an Account? <a href="aeslogin.html">Login</a> </p>
   </div>
+  <script type="module">
+    // Import the necessary Firebase functions
+    import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+  
+    // Attach a submit event listener to the form
+    document.getElementById("form").addEventListener("submit", async (event) => {
+      event.preventDefault(); // Prevent form from refreshing the page
+  
+      // Get form input values
+      const firstname = document.getElementById("firstname-input").value;
+      const email = document.getElementById("email-input").value;
+      const password = document.getElementById("password-input").value;
+      const repeatPassword = document.getElementById("repeat-password-input").value;
+  
+      const errorMessage = document.getElementById("error-message");
+  
+      // Validate that passwords match
+      if (password !== repeatPassword) {
+        errorMessage.textContent = "Passwords do not match.";
+        errorMessage.style.color = "red";
+        return;
+      }
+  
+      try {
+        // Create a new user using Firebase Authentication
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  
+        // Log user data or save additional data if needed
+        console.log("User registered:", userCredential.user);
+  
+        // Redirect to login or dashboard
+        window.location.href = "aeslogin.html";
+      } catch (error) {
+        // Handle and display errors
+        console.error("Error registering user:", error);
+        errorMessage.textContent = error.message;
+        errorMessage.style.color = "red";
+      }
+    });
+  </script>
+  
 </body>
 </html>

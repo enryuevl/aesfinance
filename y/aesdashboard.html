@@ -11,57 +11,57 @@
 	
 	<!-- SIDEBAR -->
 
-<section id="sidebar">
-    <div class="logo-title">
-        <img src="aeslogo.png" alt="AES Logo" class="logo">
-        <span class="title">AES Finance</span>
-    </div>
-    <ul class="side-menu">
-        <li><a href="#" class="active"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
-        <li class="divider" data-text="management">Management</li>
-        <li>
-            <a href="#"><i class='bx bx-wallet icon'></i> Accounts <i class='bx bx-chevron-right icon-right'></i></a>
-            <ul class="side-dropdown">
-                <li><a href="#">View Accounts</a></li>
-                <li><a href="#">Add Account</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class='bx bx-transfer-alt icon'></i> Transactions <i class='bx bx-chevron-right icon-right'></i></a>
-            <ul class="side-dropdown">
-                <li><a href="#">View Transactions</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class='bx bx-credit-card icon'></i> Payments <i class='bx bx-chevron-right icon-right'></i></a>
-            <ul class="side-dropdown">
-                <li><a href="#">View Payments</a></li>
-                <li><a href="#">Add Payment</a></li>
-                <li><a href="#">Recurring Payments</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class='bx bx-pie-chart-alt icon'></i> Fund Allocation <i class='bx bx-chevron-right icon-right'></i></a>
-            <ul class="side-dropdown">
-                <li><a href="#">View Allocations</a></li>
-                <li><a href="#">Allocate Funds</a></li>
-                <li><a href="#">Budget Planning</a></li>
-            </ul>
+    <section id="sidebar">
+        <div class="logo-title">
+            <img src="aeslogo.png" alt="AES Logo" class="logo">
+            <span class="title">AES Finance</span>
+        </div>
+        <ul class="side-menu">
+            <li><a href="aesdashboard.html" class="active"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
+            <li class="divider" data-text="management">Management</li>
             <li>
-                <a href="#"><i class='bx bx-history icon'></i> Logs</a>
-            </li>
-            <li class="divider" data-text="settings">Settings</li>
-            <li>
-                <a href="#"><i class='bx bxs-user-circle icon'></i> User Profile</a>
+                <a href="#"><i class='bx bx-wallet icon'></i> Accounts <i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="aesviewaccounts.html">View Accounts</a></li>
+                    <li><a href="aescreateaccounts.html">Add Account</a></li>
+                </ul>
             </li>
             <li>
-                <a href="#"><i class='bx bx-cog icon'></i> System Settings</a>
+                <a href="#"><i class='bx bx-transfer-alt icon'></i> Transactions <i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="aesviewtransaction.html">View Transactions</a></li>
+                </ul>
             </li>
             <li>
-                <a href="#"><i class='bx bx-log-out icon'></i> Logout</a>
+                <a href="#"><i class='bx bx-credit-card icon'></i> Payments <i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="aesviewtransaction.html">View Payments</a></li>
+                    <li><a href="aesregisterpayment.html">Add Payment</a></li>
+                    <li><a href="aesconfigurepayment.html">Recurring Payments</a></li>
+                </ul>
             </li>
-        </ul>
-</section>
+            <li>
+                <a href="#"><i class='bx bx-pie-chart-alt icon'></i> Fund Allocation <i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="aesfundallocate.html">View Allocations</a></li>
+                    <li><a href="aesfundallocate.html">Allocate Funds</a></li>
+                   
+                </ul>
+                <li>
+                    <a href="#"><i class='bx bx-history icon'></i> Logs</a>
+                </li>
+                <li class="divider" data-text="settings">Settings</li>
+                <li>
+                    <a href="#"><i class='bx bxs-user-circle icon'></i> User Profile</a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-cog icon'></i> System Settings</a>
+                </li>
+                <li>
+                    <a href="#" onclick="confirmLogout(event)"><i class='bx bx-log-out icon'></i> Logout</a>
+                </li>
+            </ul>
+    </section>
 
 
 	<!-- SIDEBAR -->
@@ -91,7 +91,7 @@
 				<ul class="profile-link">
 					<li><a href="#"><i class='bx bxs-user-circle icon'></i> Profile</a>
 					<li><a href="#"><i class='bx bx-cog icon'></i> Settings</a>
-					<li><a href="#"><i class='bx bx-log-out icon'></i> Logout</a>
+					<li><a href="#" onclick="confirmLogout(event)"><i class='bx bx-log-out icon'></i> Logout</a>
 				</ul>
 			</div>
 		</nav>
@@ -269,5 +269,18 @@
 	<!-- NAVBAR -->
 
 	<script src="script.js"></script>
+    <script>
+        function confirmLogout(event) {
+            event.preventDefault(); // Prevent the default navigation behavior
+    
+            const userConfirmed = confirm("Are you sure you want to log out?");
+            
+            if (userConfirmed) {
+                // Redirect to index.html
+                window.location.href = "index.html";
+            }
+            // If the user clicks "Cancel", do nothing
+        }
+    </script>
 </body>
 </html>
