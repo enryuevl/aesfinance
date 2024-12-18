@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="createaccounts.css">
+   
+    <script src="script.js"></script>
 	<title>AES Finance</title>
 </head>
 <body>
@@ -51,7 +53,7 @@
                 </li>
                 <li class="divider" data-text="settings">Settings</li>
 
-    
+
                 <li>
                     <a href="#" onclick="confirmLogout(event)"><i class='bx bx-log-out icon'></i> Logout</a>
                 </li>
@@ -108,11 +110,11 @@
             <div class="form-group-row">
                 <div class="form-group half-width">
                     <label for="first-name">First Name</label>
-                    <input type="text" id="first-name" placeholder="Enter first name" required>
+                    <input type="text" id="firstname" placeholder="Enter first name" required>
                 </div>
                 <div class="form-group half-width">
                     <label for="last-name">Last Name</label>
-                    <input type="text" id="last-name" placeholder="Enter last name" required>
+                    <input type="text" id="lastname" placeholder="Enter last name" required>
                 </div>
             </div>
 
@@ -123,15 +125,7 @@
             </div>
 
             <!-- User Level -->
-            <div class="form-group">
-                <label for="user-level">User Level</label>
-                <select id="user-level" required>
-                    <option value="" disabled selected>Select user level</option>
-                    <option value="admin">Admin</option>
-                    <option value="faculty">Faculty</option>
-                    <option value="parent">Parent</option>
-                </select>
-            </div>
+            
 
             <!-- Password Fields -->
             <div class="form-group-row">
@@ -139,16 +133,13 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="Enter password" required>
                 </div>
-                <div class="form-group half-width">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" placeholder="Confirm password" required>
-                </div>
+                
             </div>
 
             <!-- Action Buttons -->
             <div class="form-buttons">
-                <button type="submit" class="action-btn confirm-btn">Create Account</button>
-                <button type="reset" class="action-btn reject-btn">Reset</button>
+                <button type="submit" id="submit" class="action-btn confirm-btn">Create Account</button>
+                
             </div>
         </form>
     </div>
@@ -161,7 +152,7 @@
 
 
     
-    <script src="script.js"></script>
+    
 </body>
 </html>
 
