@@ -76,7 +76,7 @@ const submit = document.getElementById("submit");
              // });
              alert("Creating Account. Please Wait");
              // Store user data in Firestore
-             await addDoc(collection(db, "users"), {
+             await addDoc(collection(db, "admins"), {
                  fname,
                  lname,
                  email,

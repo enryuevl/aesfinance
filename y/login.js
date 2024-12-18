@@ -28,7 +28,7 @@
 
   const submit = document.getElementById("login");
 
-submit.addEventListener("click", function (event) {
+    submit.addEventListener("click", async function (event) {
     event.preventDefault(); // Prevent default form submission
 
     const email = document.getElementById("email").value;
@@ -48,19 +48,35 @@ submit.addEventListener("click", function (event) {
         return;
     }
 
-    // Login the user using Firebase Authentication
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // User signed in successfully
-            const user = userCredential.user;
-            alert("Login successful! Redirecting to the dashboard...");
-            window.location.href = "aesdashboard.html"; // Redirect to the dashboard or desired page
-        })
-        .catch((error) => {
-            // Handle login errors
-            console.error("Login failed:", error); // Log the detailed error for debugging
-            alert("Login unsuccessful, please try again."); // User-friendly error message
-        });
-});
-
-
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+    
+        const usersQuery = query(collection(firestore, "users"), where("email", "==", email));
+        const adminsQuery = query(collection(firestore, "admins"), where("email", "==", email));
+    
+        const [usersSnapshot, adminsSnapshot] = await Promise.all([
+            getDocs(usersQuery),
+            getDocs(adminsQuery),
+        ]);
+    
+        console.log("Users Query Result:", usersSnapshot.docs.map(doc => doc.data()));
+        console.log("Admins Query Result:", adminsSnapshot.docs.map(doc => doc.data()));
+    
+        if (!usersSnapshot.empty) {
+            console.log("User exists in users collection");
+            alert("Login successful! Redirecting to user dashboard...");
+            window.location.href = "aesuserdashboard.html";
+        } else if (!adminsSnapshot.empty) {
+            console.log("User exists in admins collection");
+            alert("Login successful! Redirecting to admin dashboard...");
+            window.location.href = "aesdashboard.html";
+        } else {
+            console.log("Email not found in either collection");
+            alert("No valid role found. Please contact support.");
+        }
+    } catch (error) {
+        console.error("Error during login or Firestore query:", error);
+        alert("Login unsuccessful, please try again.");
+    }
+});    
