@@ -31,15 +31,16 @@
  const db = getFirestore(app);
  
  
- function resetInputFields() {
+function resetInputFields() {
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
     document.getElementById("firstname").value = "";
     document.getElementById("lastname").value = "";
-  }
- 
- // Event listener for the submit button
- const submit = document.getElementById("submit");
+    
+}
+
+
+const submit = document.getElementById("submit");
  submit.addEventListener("click", function (event) {
      event.preventDefault(); // Prevent default form submission
  
@@ -47,12 +48,16 @@
      const password = document.getElementById("password").value;
      const fname = document.getElementById("firstname").value;
      const lname = document.getElementById("lastname").value;
+     
  
      // Validate inputs
      if (!email || !password || !fname || !lname) {
          alert("Please fill in all the fields.");
          return;
      }
+
+     
+    
  
      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
      if (!emailRegex.test(email)) {
@@ -69,7 +74,7 @@
              // await updateProfile(user, {
              //     displayName: `${fname} ${lname}`,
              // });
- 
+             alert("Creating Account. Please Wait");
              // Store user data in Firestore
              await addDoc(collection(db, "users"), {
                  fname,
@@ -79,12 +84,10 @@
              });
  
              alert("Account created successfully!");
-             resetInputFields();
+             
          })
-         .catch((error) => {
-             console.error("Error creating user:", error);
-             alert("Error creating account. Please try again.");
-         });
+            .catch((error) => {
+                console.error("Error creating user:", error);
+                alert("Error creating account. Please try again.");
+        });
  });
- 
- 

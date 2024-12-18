@@ -42,6 +42,7 @@ submit.addEventListener("click", function (event) {
     const password = document.getElementById("repeatpassword").value;
     const fname = document.getElementById("firstname").value;
     const lname = document.getElementById("lastname").value;
+    
 
     // Validate inputs
     if (!email || !password || !fname || !lname) {
